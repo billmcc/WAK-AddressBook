@@ -3,25 +3,31 @@ guidedModel =// @startlock
 {
 	Person :
 	{
-		entityMethods :
-		{// @endlock
-			fullLastFirst:function()
-			{// @lock
-				// Add your code here
-			},// @lock
-			fullFirstLast:function()
-			{// @lock
-				// Create a fullFirstLast from 
+		fullFirstLast :
+		{
+			onGet:function()
+			{// @endlock
+					// Create a fullFirstLast from 
 				return firstName + " " + lastName
-			},// @lock
-			displayName:function()
-			{// @lock
+			}// @startlock
+		},
+		fullLastFirst :
+		{
+			onGet:function()
+			{// @endlock
+					// Create a fullFirstLast from 
+				return lastName + " " + firstName
+			}// @startlock
+		},
+		displayName :
+		{
+			onGet:function()
+			{// @endlock
 				if(ds.Person.isCompany == True){
-					return fullName
+					return fullFirstLast
 				} else {
 					return companyName
 				}
-			
 			}// @startlock
 		}
 	}
