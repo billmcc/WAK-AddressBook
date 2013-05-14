@@ -9,13 +9,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		debugger;
+		// load a combo array with options
+		var aDisplayOptions = new Array();
+		aDisplayOptions[0] = "Last name, first";
+		aDisplayOptions[1] = "First name, last";
+		//Set the value into the widget
+		('aDisplayOptions').setValue(aDisplayOptions);
+		
 		// Find out how to display the list (lastname, first etc) from settings
 		 
 		// create an array with 'All Contacts' at the top
 		
 		
 		var aGroupList = new Array();
-		mycars[0] = "All contacts...";
+		aGroupList[0] = "All contacts...";
 		
 
 		// Query all persons for this admin
