@@ -8,7 +8,7 @@ guidedModel =// @startlock
 			onGet:function()
 			{// @endlock
 				// Create a fullFirstLast from 
-				return firstName + " " + lastName
+				return firstName + " " + lastName;
 			}// @startlock
 		},
 		fullLastFirst :
@@ -16,7 +16,7 @@ guidedModel =// @startlock
 			onGet:function()
 			{// @endlock
 					// Create a fullFirstLast from 
-				return lastName + " " + firstName
+				return lastName + " " + firstName;
 			}// @startlock
 		},
 		displayName :
@@ -24,9 +24,9 @@ guidedModel =// @startlock
 			onGet:function()
 			{// @endlock
 				if(ds.Person.isCompany == True){
-					return fullFirstLast
+					return fullFirstLast;
 				} else {
-					return companyName
+					return companyName;
 				}
 			}// @startlock
 		}
