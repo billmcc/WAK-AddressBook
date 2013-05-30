@@ -55,7 +55,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//load the grid list of groups
 		var aGroupList = new Array();
 		aGroupList[0] = "All contacts...";
-		
+		$$('dataGrid2').setValue(aGroupList);
 		//load the contact list with all the contacts for the user
 
 		debugger;
