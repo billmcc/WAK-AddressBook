@@ -15,9 +15,13 @@ guidedModel =// @startlock
 			onRemove:function()
 			{// @endlock
 				// remove the admin entity and the directory listing
+				// using the directory ID of the admin class find the corresponding directory user
+				debugger;
 				var myUser = directory.user( this.directoryID ); // creates the user object
+				// if the user is found then remove the user from the directory
+				
 				if(myUser != null){
-					myUser.remove( );
+					myUser.remove();
 					directory.save();
 				}
 				 
@@ -28,14 +32,17 @@ guidedModel =// @startlock
 				// Whenever an admin is saved, check to see if there is this admin in the directory.
 				// Query the directory to see this admin is there
 				
+				// using the directory ID of the admin class find the corresponding directory user
 				var myUser = directory.user( this.directoryID );
+				// if the user is found then save the password
 				if(myUser != null){
 					//If there is already this admin in the directory then update the attributes
 					setPassword( this.password )
 					directory.save(); // do not forget to save the changes
 				} else {
-					// Else at this admin to the directory.
-					var newUser = directory.addUser(ds.Admin.userName, ds.Admin.password, ds.Admin.fullName);
+					// Else add this admin to the directory.
+					
+					var newUser = directory.addUser(this.userName, this.password, this.fullName);
 					directory.save(); // do not forget to save the changes
 				}
 				
